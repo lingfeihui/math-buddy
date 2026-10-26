@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 干净浅灰背景，去掉科技网格和光晕 */
+.app-shell {
+  position: relative;
+  min-height: 100%;
+  background: #f8fafc;
+}
+
+.glass {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 20px -6px rgba(15, 23, 42, 0.06);
+  border-radius: 16px;
+}
+
+.glass-soft {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+}
+
+/* 滚动条 */
+.thin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.4) transparent;
+}
+.thin-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 999px;
+}
+.thin-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 打字机光标 */
+.caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -0.12em;
+  background: #38bdf8;
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* Markdown 正文排版 */
+.md-body {
+  font-size: 14.5px;
+  line-height: 1.86;
+  color: #0f172a;
+  word-break: break-word;
+}
+/* 面板里的小字号排版：跟着父元素颜色和字号走，去掉段落间距 */
+.md-body-compact {
+  font-size: inherit;
+  line-height: 1.72;
+  color: inherit;
+}
+.md-body-compact p {
+  margin: 0;
+}
+.md-body > *:first-child {
+  margin-top: 0;
+}
+.md-body > *:last-child {
+  margin-bottom: 0;
+}
+.md-body p {
+  margin: 0.6em 0;
+}
+.md-body strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+.md-body em {
+  color: #475569;
+}
+.md-body ul,
+.md-body ol {
+  margin: 0.6em 0;
+  padding-left: 1.35em;
+}
+.md-body li {
+  margin: 0.25em 0;
+}
+.md-body ul {
+  list-style: disc;
+}
+.md-body ol {
+  list-style: decimal;
+}
+.md-body h1,
+.md-body h2,
+.md-body h3,
+.md-body h4 {
+  margin: 0.9em 0 0.45em;
+  color: #0f172a;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.md-body h1 {
+  font-size: 1.24em;
+}
+.md-body h2 {
+  font-size: 1.16em;
+}
+.md-body h3 {
+  font-size: 1.08em;
+}
+.md-body code {
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 0.88em;
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #334155;
+}
+.md-body pre {
+  margin: 0.7em 0;
+  padding: 0.85em 1em;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  overflow-x: auto;
+}
+.md-body pre code {
+  background: transparent;
+  padding: 0;
+  color: #334155;
+}
+.md-body blockquote {
+  margin: 0.7em 0;
+  padding: 0.35em 0.9em;
+  border-left: 2px solid #bfdbfe;
+  background: #eff6ff;
+  color: #334155;
+  border-radius: 0 8px 8px 0;
+}
+.md-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.7em 0;
+  font-size: 0.94em;
+}
+.md-body th,
+.md-body td {
+  border: 1px solid #e2e8f0;
+  padding: 0.4em 0.6em;
+  text-align: left;
+}
+.md-body th {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+.md-body a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.md-body .katex-display {
+  margin: 0.7em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.15em 0;
+}
+.md-body .katex {
+  color: #0f172a;
+  font-size: 1.06em;
+}
